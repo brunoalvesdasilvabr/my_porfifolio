@@ -20,11 +20,21 @@
   p {
     color: #6fffe9;
     font-weight: 200;
+    text-align: center;
+    margin-top: 1rem;
+  }
+  &__description {
     width: 28rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   &__title-container {
     display: flex;
-    gap: 1rem;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    align-items: center;
   }
 
   &__title-greeting {
@@ -34,7 +44,7 @@
   }
   &__title-name {
     span {
-      font-weight: 500;
+      font-weight: 800;
     }
   }
 
@@ -49,15 +59,21 @@ section {
   .home {
     flex-direction: column;
     h1 {
-      font-size: 8vw;
+      font-size: 8.5vw;
+      text-align: center;
     }
     h2 {
-      font-size: 4.5vw;
+      font-size: 7vw;
     }
     &__mySvg {
       width: 80vw;
     }
+
+    &__description {
+      width: 22rem;
+    }
   }
+
   // section {
   //   height: 50vh;
   // }

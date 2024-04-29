@@ -4,11 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './sections/home/home.component';
 import { AboutComponent } from './sections/about/about.component';
-import { SharedModule } from './shared/shared/shared.module';
+import { SharedModule } from './shared/shared.module';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClientModule } from '@angular/common/http';
+import { MySvgPicComponent } from './shared/components/my-svg-pic/my-svg-pic.component';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, AboutComponent],
@@ -16,7 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     BrowserModule,
     TranslateModule.forRoot({
-      defaultLanguage: 'pt-br', // Set your default language here
+      defaultLanguage: 'en', // Set your default language here
       loader: {
         provide: TranslateLoader,
         useFactory: function HttpLoaderFactory(http: HttpClient) {

@@ -26,13 +26,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
     name: [''],
   };
   constructor(private translate: TranslateService) {
-    combineLatest([
-      this.translate.get('home.greeting'),
-      this.translate.get('home.name'),
-    ]).subscribe(([greeting, name]) => {
-      this.homeTitle.greeting = greeting.split('');
-      this.homeTitle.name = name.split('');
-    });
+    this.getTransations();
   }
 
   ngOnInit(): void {
@@ -70,7 +64,17 @@ export class HomeComponent implements AfterViewInit, OnInit {
         opacity: 0,
         // ease: 'bounce', // Bouncy ease for a fun effect (optional)
       });
-    }, 1000);
+    }, 100);
+  }
+
+  getTransations() {
+    combineLatest([
+      this.translate.get('home.greeting'),
+      this.translate.get('home.name'),
+    ]).subscribe(([greeting, name]) => {
+      this.homeTitle.greeting = greeting.split('');
+      this.homeTitle.name = name.split('');
+    });
   }
   switchLanguage(langCode: string) {
     this.translate.use(langCode);
