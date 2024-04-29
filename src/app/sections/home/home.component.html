@@ -1,15 +1,25 @@
 <section>
   <div class="home">
     <div class="home__description">
-      <h1 #title>
-        <span class="letter" *ngFor="let word of words">
-          {{ word === " " ? "&nbsp;" : word }}
-        </span>
-      </h1>
+      <div class="home__title-container">
+        <h1 class="home__title-greeting" #greeting>
+          <span class="letter" *ngFor="let word of homeTitle.greeting">
+            {{ word === " " ? "&nbsp;" : word }}
+          </span>
+        </h1>
+        <h1 class="home__title-name" #name>
+          <span class="letter" *ngFor="let word of homeTitle.name">
+            {{ word === " " ? "&nbsp;" : word }}
+          </span>
+        </h1>
+      </div>
 
-      <h1 #subTitle>Desenvolvedor Front end</h1>
+      <p #subTitle>
+        {{ "home.description" | translate }}
+      </p>
     </div>
 
-    <img #mySvg src="assets/img/me.svg" />
+    <img class="home__mySvg" #mySvg src="assets/img/me.svg" />
   </div>
+  <button (click)="switchLanguage('en')">trocar</button>
 </section>

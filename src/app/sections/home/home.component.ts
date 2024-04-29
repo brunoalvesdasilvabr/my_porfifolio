@@ -7,8 +7,10 @@ import {
   ViewChildren,
   QueryList,
 } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { combineLatest, subscribeOn } from 'rxjs';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -16,37 +18,61 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 })
 export class HomeComponent implements AfterViewInit, OnInit {
   @ViewChild('mySvg', { static: false }) mySvg!: ElementRef;
-  @ViewChild('title', { static: false }) title!: ElementRef;
+  @ViewChild('greeting', { static: false }) greeting!: ElementRef;
+  @ViewChild('name', { static: false }) name!: ElementRef;
   @ViewChild('subTitle', { static: false }) subTitle!: ElementRef;
-  words: string[] = [];
-  constructor() {}
+  homeTitle = {
+    greeting: [''],
+    name: [''],
+  };
+  constructor(private translate: TranslateService) {
+    combineLatest([
+      this.translate.get('home.greeting'),
+      this.translate.get('home.name'),
+    ]).subscribe(([greeting, name]) => {
+      this.homeTitle.greeting = greeting.split('');
+      this.homeTitle.name = name.split('');
+    });
+  }
 
   ngOnInit(): void {
     gsap.registerPlugin(ScrollTrigger);
-    this.words = 'Olá! Eu sou o Bruno'.split('');
-
-    console.log(this.words);
   }
 
   ngAfterViewInit(): void {
-    gsap.from(this.title.nativeElement.querySelectorAll('.letter'), {
-      duration: 0.4, // Animation duration in seconds
-      opacity: 0,
-      y: '-200%',
-      skewY: 100,
-      skewX: 30,
-      scaleY: 0.9,
-      filter: 'blur(10px)',
-      stagger: 0.1,
-      ease: 'bounce', // Bouncy ease for a fun effect (optional)
-    });
+    setTimeout(() => {
+      gsap.from(this.greeting.nativeElement.querySelectorAll('.letter'), {
+        duration: 1, // Animation duration in seconds
+        opacity: 0,
+        y: '-100%',
+        skewX: 30,
+        scaleY: 0.9,
+        filter: 'blur(5px)',
+        stagger: 0.1,
+        ease: 'bounce', // Bouncy ease for a fun effect (optional)
+      });
+      gsap.from(this.name.nativeElement.querySelectorAll('.letter'), {
+        duration: 1, // Animation duration in seconds
+        opacity: 0,
+        y: '-100%',
+        skewX: 30,
+        scaleY: 0.9,
+        filter: 'blur(5px)',
+        delay: 1.7,
+        stagger: 0.1,
+        ease: 'bounce', // Bouncy ease for a fun effect (optional)
+      });
 
-    gsap.from(this.subTitle.nativeElement, {
-      duration: 1, // Animation duration in seconds
-      y: '100%',
-      delay: 1.5,
-      opacity: 0,
-      // ease: 'bounce', // Bouncy ease for a fun effect (optional)
-    });
+      gsap.from(this.subTitle.nativeElement, {
+        duration: 1, // Animation duration in seconds
+        y: '100%',
+        delay: 2.7,
+        opacity: 0,
+        // ease: 'bounce', // Bouncy ease for a fun effect (optional)
+      });
+    }, 1000);
+  }
+  switchLanguage(langCode: string) {
+    this.translate.use(langCode);
   }
 }
