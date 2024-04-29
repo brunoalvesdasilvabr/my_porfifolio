@@ -1,0 +1,24 @@
+.home {
+  display: flex;
+  align-items: center;
+  &__description {
+    h1 {
+      display: flex;
+      font-family: "Roboto", sans-serif;
+      color: white;
+      font-size: 4vw;
+      background: linear-gradient(to right, #5bc0be, #5bc0be, #6fffe9);
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      span {
+        background: linear-gradient(to right, #5bc0be, #5bc0be, #6fffe9);
+
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+    }
+  }
+}
+section {
+  background-color: #0b132b;
+}

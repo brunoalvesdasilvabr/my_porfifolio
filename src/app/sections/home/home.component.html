@@ -1,0 +1,15 @@
+<section>
+  <div class="home">
+    <div class="home__description">
+      <h1 #title>
+        <span class="letter" *ngFor="let word of words">
+          {{ word === " " ? "&nbsp;" : word }}
+        </span>
+      </h1>
+
+      <h1 #subTitle>Desenvolvedor Front end</h1>
+    </div>
+
+    <img #mySvg src="assets/img/me.svg" />
+  </div>
+</section>
