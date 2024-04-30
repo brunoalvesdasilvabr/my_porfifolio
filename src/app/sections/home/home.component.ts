@@ -36,7 +36,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
   ngAfterViewInit(): void {
     setTimeout(() => {
       gsap.from(this.greeting.nativeElement.querySelectorAll('.letter'), {
-        duration: 1, // Animation duration in seconds
+        duration: 0.1, // Animation duration in seconds
         opacity: 0,
         y: '-100%',
         skewX: 30,
@@ -46,13 +46,13 @@ export class HomeComponent implements AfterViewInit, OnInit {
         ease: 'bounce', // Bouncy ease for a fun effect (optional)
       });
       gsap.from(this.name.nativeElement.querySelectorAll('.letter'), {
-        duration: 1, // Animation duration in seconds
+        duration: 0.1, // Animation duration in seconds
         opacity: 0,
         y: '-100%',
         skewX: 30,
         scaleY: 0.9,
         filter: 'blur(5px)',
-        delay: 1.7,
+        delay: 1,
         stagger: 0.1,
         ease: 'bounce', // Bouncy ease for a fun effect (optional)
       });
@@ -60,7 +60,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
       gsap.from(this.subTitle.nativeElement, {
         duration: 1, // Animation duration in seconds
         y: '100%',
-        delay: 2.7,
+        delay: 1,
         opacity: 0,
         // ease: 'bounce', // Bouncy ease for a fun effect (optional)
       });

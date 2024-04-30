@@ -20,7 +20,7 @@ export class MySvgPicComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     gsap.fromTo(
       Array.from(this.mySvg.nativeElement.querySelectorAll('path')).slice(
-        45,
+        75,
         202
       ),
       {
