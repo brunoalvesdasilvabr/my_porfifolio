@@ -1,0 +1,26 @@
+.header {
+  background-color: #0b132b;
+  padding: 1rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  &__btn-container {
+    position: relative;
+    &::after {
+      position: absolute;
+      content: "";
+      width: 2px;
+      height: 60%;
+      top: 20%;
+      right: 37%;
+      background-color: #7c9eb2;
+    }
+  }
+
+  a {
+    color: #7c9eb2;
+    cursor: pointer;
+    margin: 0 0.5rem;
+    font-size: 1rem;
+  }
+}

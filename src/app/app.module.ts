@@ -10,9 +10,10 @@ import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClientModule } from '@angular/common/http';
 import { MySvgPicComponent } from './shared/components/my-svg-pic/my-svg-pic.component';
+import { HeaderComponent } from './core/components/header/header.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, AboutComponent],
+  declarations: [AppComponent, HomeComponent, AboutComponent, HeaderComponent],
   imports: [
     HttpClientModule,
     BrowserModule,

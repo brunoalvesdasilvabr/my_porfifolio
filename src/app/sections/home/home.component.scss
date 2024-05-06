@@ -1,3 +1,7 @@
+section {
+  background-color: #0b132b;
+}
+
 .home {
   display: flex;
   align-items: center;
@@ -24,7 +28,7 @@
     margin-top: 1rem;
   }
   &__description {
-    width: 28rem;
+    width: 31rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -52,9 +56,7 @@
     width: 31vw;
   }
 }
-section {
-  background-color: #0b132b;
-}
+
 @media only screen and (max-width: 600px) {
   .home {
     flex-direction: column;

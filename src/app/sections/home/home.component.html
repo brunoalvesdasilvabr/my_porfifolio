@@ -3,12 +3,15 @@
     <div class="home__description">
       <div class="home__title-container">
         <h1 class="home__title-greeting" #greeting>
-          <span class="letter" *ngFor="let word of homeTitle.greeting">
+          <span
+            class="letter"
+            *ngFor="let word of (homeTitle$ | async)?.greeting"
+          >
             {{ word === " " ? "&nbsp;" : word }}
           </span>
         </h1>
         <h1 class="home__title-name" #name>
-          <span class="letter" *ngFor="let word of homeTitle.name">
+          <span class="letter" *ngFor="let word of (homeTitle$ | async)?.name">
             {{ word === " " ? "&nbsp;" : word }}
           </span>
         </h1>
@@ -19,7 +22,7 @@
       </p>
     </div>
 
-    <app-my-svg-pic class="home__mySvg" #mySvg></app-my-svg-pic>
+    <app-my-svg-pic class="home__mySvg"></app-my-svg-pic>
   </div>
 </section>
 <!-- <button (click)="switchLanguage('en')">trocar</button> -->
