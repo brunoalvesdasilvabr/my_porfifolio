@@ -10,7 +10,7 @@ import {
 import { TranslateService } from '@ngx-translate/core';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Observable } from 'rxjs';
+import { Observable, ReplaySubject } from 'rxjs';
 import { AnimationService } from 'src/app/shared/services/animation.service';
 @Component({
   selector: 'app-home',
@@ -21,6 +21,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
   @ViewChild('greeting', { static: false }) greeting!: ElementRef;
   @ViewChild('name', { static: false }) name!: ElementRef;
   @ViewChild('subTitle', { static: false }) subTitle!: ElementRef;
+  @ViewChild('contactBtn', { static: false }) contactBtn!: ElementRef;
   homeTitle$!: Observable<{ greeting: string[]; name: string[] }>;
   constructor(
     private translate: TranslateService,
@@ -35,37 +36,23 @@ export class HomeComponent implements AfterViewInit, OnInit {
     this.animation.startAnimation$.next(true);
     this.animation.setElements(this.greeting, this.name, this.subTitle);
     this.homeTitle$ = this.animation.homeTitleProps$;
-    // setTimeout(() => {
-    //   gsap.from(this.greeting.nativeElement.querySelectorAll('.letter'), {
-    //     duration: 0.1, // Animation duration in seconds
-    //     opacity: 0,
-    //     y: '-100%',
-    //     skewX: 30,
-    //     scaleY: 0.9,
-    //     filter: 'blur(5px)',
-    //     stagger: 0.1,
-    //     ease: 'bounce', // Bouncy ease for a fun effect (optional)
-    //   });
-    //   gsap.from(this.name.nativeElement.querySelectorAll('.letter'), {
-    //     duration: 0.1, // Animation duration in seconds
-    //     opacity: 0,
-    //     y: '-100%',
-    //     skewX: 30,
-    //     scaleY: 0.9,
-    //     filter: 'blur(5px)',
-    //     delay: 1,
-    //     stagger: 0.1,
-    //     ease: 'bounce', // Bouncy ease for a fun effect (optional)
-    //   });
-
-    //   gsap.from(this.subTitle.nativeElement, {
-    //     duration: 1, // Animation duration in seconds
-    //     y: '100%',
-    //     delay: 1,
-    //     opacity: 0,
-    //     // ease: 'bounce', // Bouncy ease for a fun effect (optional)
-    //   });
-    // }, 100);
+    // gsap.to(this.contactBtn.nativeElement, {
+    //   y: 200,
+    //   duration: 8,
+    //   scrollTrigger: {
+    //     start: 'top center',
+    //     trigger: this.contactBtn.nativeElement,
+    //     toggleActions: 'restart reverse',
+    //     scrub: 4,
+    //     markers: true,
+    //   },
+    // });
+  }
+  setDinamicYearsOfExperience(description: string) {
+    const currentDate = new Date().getFullYear();
+    const calcExperience = (currentDate - 2019).toString();
+    const result = description.replace(/\d+/, calcExperience);
+    return result;
   }
 
   switchLanguage(langCode: string) {

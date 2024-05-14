@@ -5,6 +5,7 @@ section {
 .home {
   display: flex;
   align-items: center;
+  margin-top: 5rem;
   h1,
   h2 {
     background: linear-gradient(to right, #5bc0be 20%, #5bc0be 40%, #6fffe9);
@@ -21,6 +22,7 @@ section {
       background-clip: text;
     }
   }
+
   p {
     color: #6fffe9;
     font-weight: 200;
@@ -29,10 +31,8 @@ section {
   }
   &__description {
     width: 31rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    place-items: center;
   }
   &__title-container {
     display: flex;
@@ -55,6 +55,12 @@ section {
   &__mySvg {
     width: 31vw;
   }
+  &__subtitle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -72,7 +78,7 @@ section {
     }
 
     &__description {
-      width: 22rem;
+      width: 23rem;
     }
   }
 

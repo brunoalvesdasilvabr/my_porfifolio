@@ -2,6 +2,20 @@
   "home": {
     "greeting": "Hello, I'm",
     "name": "Bruno",
-    "description": "Driven front-end developer with a strong focus on crafting clean, reusable, and performant code. Continuously honing skills to tackle complex UI challenges"
+    "description": "Passionate about front-end development! With 5+ years of experience, Dedicating myself every day to transform ideas into code. Continuously sharpening my skills to tackle complex UI.",
+    "whatsappmessage": "Hello, I enjoyed your portfolio! Let's talk?",
+    "letsWorkTogether": "Let's work together!"
+  },
+
+  "projects": {
+    "pageTitle": "Projects",
+    "company_stefanini": {
+      "title": "Stefanini | Farol Cielo",
+      "description": "Responsible for Front end development in 3 web projects inside the client.Applications are developed using Angularjs, Angular 8/11. The main goal of the applications are monetazing customers data by showing charts and summing up his sells informations"
+    },
+    "company_ibm": {
+      "title": "IBM | Portal Santander",
+      "description": "Responsável pelo desenvolvimento Front end em 3 projetos  dentro do cliente. As aplicaçóes são desenvolvidas utilizando Angularjs, Angular 8/11. O principal objetivo das aplicações é monetizar os dados dos clientes, mostrando gráficos e resumindo suas informações de vendas"
+    }
   }
 }

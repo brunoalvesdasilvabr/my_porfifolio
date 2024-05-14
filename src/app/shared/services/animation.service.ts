@@ -54,16 +54,18 @@ export class AnimationService {
   private listenForAnimation(): void {
     this.startAnimation$.subscribe((value) => {
       if (value) {
+        this.homeTitleElements$.next({ greeting: [''], name: [''] });
         this.getTransations();
         setTimeout(() => {
           this.initHomeAnimation();
-        }, 10);
+        }, 50);
       }
     });
   }
   private initHomeAnimation(): void {
     try {
-      gsap.from(this._greetingEl.nativeElement.querySelectorAll('.letter'), {
+      const tl = gsap.timeline();
+      tl.from(this._greetingEl.nativeElement.querySelectorAll('.letter'), {
         duration: 0.1,
         opacity: 0,
         y: '-100%',
@@ -73,22 +75,20 @@ export class AnimationService {
         stagger: 0.1,
         ease: 'bounce',
       });
-      gsap.from(this._nameEl.nativeElement.querySelectorAll('.letter'), {
+      tl.from(this._nameEl.nativeElement.querySelectorAll('.letter'), {
         duration: 0.1,
         opacity: 0,
         y: '-100%',
         skewX: 30,
         scaleY: 0.9,
         filter: 'blur(5px)',
-        delay: 1,
         stagger: 0.1,
         ease: 'bounce',
       });
 
-      gsap.from(this._subTitleEl.nativeElement, {
+      tl.from(this._subTitleEl.nativeElement, {
         duration: 1,
         y: '100%',
-        delay: 1,
         opacity: 0,
       });
     } catch (err) {

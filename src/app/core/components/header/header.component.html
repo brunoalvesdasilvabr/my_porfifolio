@@ -1,4 +1,14 @@
 <header class="header">
+  <a
+    class="header__contact"
+    target="_blank"
+    href="https://wa.me/+5511971246965?text={{
+      'home.whatsappmessage' | translate
+    }}"
+  >
+    {{ "home.letsWorkTogether" | translate }}
+    <img src="../../../../assets/img/whatsapp.svg" alt="whatsapp logo" />
+  </a>
   <div class="header__btn-container">
     <a (click)="defineTranslation('pt-br')">PT-BR</a>
     <a (click)="defineTranslation('en')">EN</a>

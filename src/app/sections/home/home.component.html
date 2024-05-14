@@ -16,10 +16,9 @@
           </span>
         </h1>
       </div>
-
-      <p #subTitle>
-        {{ "home.description" | translate }}
-      </p>
+      <div #subTitle class="home__subtitle-container">
+        <p>{{ setDinamicYearsOfExperience("home.description" | translate) }}</p>
+      </div>
     </div>
 
     <app-my-svg-pic class="home__mySvg"></app-my-svg-pic>

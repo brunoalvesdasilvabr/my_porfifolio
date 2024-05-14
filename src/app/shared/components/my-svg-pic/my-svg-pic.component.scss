@@ -1,4 +1,10 @@
-// svg path {
-//   stroke-dasharray: 1000;
-//   stroke-dashoffset: 100;
-// }
+img {
+  position: absolute;
+  width: inherit;
+  opacity: 0;
+  border-radius: 17%;
+  transition: 0.5s;
+}
+svg {
+  border-radius: 17%;
+}
