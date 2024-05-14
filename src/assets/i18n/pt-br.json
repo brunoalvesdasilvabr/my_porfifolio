@@ -1,4 +1,9 @@
 {
+  "utils": {
+    "buttons": {
+      "viewMore": "Ver mais"
+    }
+  },
   "home": {
     "greeting": "Olá, Eu sou o",
     "name": "Bruno",
@@ -8,13 +13,29 @@
   },
   "projects": {
     "pageTitle": "Projetos",
-    "company_stefanini": {
+    "farol": {
       "title": "Stefanini | Farol Cielo",
-      "description": "Responsável pelo desenvolvimento Front end em 3 projetos dentro do cliente. As aplicaçóes são desenvolvidas utilizando Angularjs, Angular 8/11. O principal objetivo das aplicações é a monetização de dados dos clientes, mostrando gráficos e resumindo suas informações de vendas"
+      "description": " Aplicação desenvolvida em Angular 11 utilizando chartjs. Principal objetivo da aplicação é apresentar gráficos resumindo vendas do estabelecimento, fazendo assim o cliente possuir um melhor entendimento de suas vendas."
     },
-    "company_ibm": {
+    "portalCielo": {
+      "title": "Stefanini | Portal de produtos Cielo",
+      "description": "Aplicação desenvolvida em Angular 11 onde participei desde o processo de reuniões de definição da criação até o desenvolvimento de features. Projeto tem como foco listar todos os produtos disponíveis e visualizar informações de vendas utilizando gráficos."
+    },
+    "portfolio": {
+      "title": "Meu Portifólio",
+      "description": "Applicação desenvolvido com Angular 16 utilizando Greensock(GSAP) para animações de scroll e svg."
+    },
+    "portalSantander": {
       "title": "IBM | Portal Santander",
-      "description": "Desenvolvimento do portal bancário com Angular 13."
+      "description": "Desenvolvimento do portal bancário com Angular 13 baseado em microapps. Aplição é dividida em várias microaplicações e todas são desenvolvidas no padrão MVC. É também utilizado uma bibliteoca interna onde se possuem vários componentes já prontos."
+    },
+    "portalBradesco": {
+      "title": "Triad Systems | Portal Bradesco",
+      "description": "Projeto é o principal portal do banco nacional Bradesco onde se encontrava desenvolvido com javascript puro e jQuery."
+    },
+    "softfin": {
+      "title": "Softfin",
+      "description": "Projeto web de gestão contábil e financeira baseado em C# no backend e Angularjs para o Frontend. O objetivo principal do projeto era gerenciar o fluxo de caixa e gerenciar o RH do cliente"
     }
   }
 }

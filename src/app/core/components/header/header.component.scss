@@ -2,7 +2,7 @@
   background-color: #0b132b;
   padding: 1rem 3rem;
   display: flex;
-  align-items: center;
+  align-items: end;
   justify-content: space-between;
   position: fixed;
   width: 100%;
@@ -15,11 +15,10 @@
   z-index: 100;
   &__contact {
     cursor: pointer;
-    color: #52528c;
+    color: #7c9eb2;
     text-decoration: none;
     font-size: 1rem;
     text-align: center;
-    margin: 0.5rem;
     transition: 0.2s;
     &:hover {
       text-decoration: underline;

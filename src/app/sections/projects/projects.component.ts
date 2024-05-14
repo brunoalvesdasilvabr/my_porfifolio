@@ -18,6 +18,11 @@ export class ProjectsComponent implements AfterViewInit {
   projectBackgroundElements!: QueryList<ElementRef>;
   @ViewChild('page_title', { static: false }) page_title!: ElementRef;
   ngAfterViewInit(): void {
+    this.pageTitleAnimation();
+    this.projectContainerAnimation();
+  }
+
+  pageTitleAnimation() {
     gsap.fromTo(
       this.page_title.nativeElement,
       { y: '-200%' },
@@ -33,15 +38,14 @@ export class ProjectsComponent implements AfterViewInit {
         },
       }
     );
-    this.projectContainerAnimation();
   }
 
   projectContainerAnimation(): void {
     this.projectBackgroundElements.forEach((element) => {
       const tl = gsap.timeline({
         scrollTrigger: {
-          start: 'top 68%',
-          end: 'top 63%',
+          start: 'top 78%',
+          end: 'top 74%',
           trigger: element.nativeElement,
           toggleActions: 'restart reverse',
           scrub: 3,
