@@ -1,0 +1,67 @@
+<section>
+  <app-divider></app-divider>
+  <div class="projects">
+    <h1 #page_title>{{ "projects.pageTitle" | translate }}</h1>
+
+    <div class="projects__project-container">
+      <span #project_background></span>
+      <div #project_content class="projects__wrapper">
+        <h2>{{ "projects.farol.title" | translate }}</h2>
+        <p>
+          {{ "projects.farol.description" | translate }}
+        </p>
+        <a (click)="navigatoToDetails('projects.farol.title')">
+          {{ "utils.buttons.viewMore" | translate }}
+        </a>
+      </div>
+    </div>
+    <div class="projects__project-container">
+      <span #project_background></span>
+      <div #project_content class="projects__wrapper">
+        <h2>{{ "projects.portalCielo.title" | translate }}</h2>
+        <p>
+          {{ "projects.portalCielo.description" | translate }}
+        </p>
+        <a (click)="navigatoToDetails('projects.portalCielo.title')">{{
+          "utils.buttons.viewMore" | translate
+        }}</a>
+      </div>
+    </div>
+    <div class="projects__project-container">
+      <span #project_background></span>
+      <div #project_content class="projects__wrapper">
+        <h2>{{ "projects.portalSantander.title" | translate }}</h2>
+        <p>
+          {{ "projects.portalSantander.description" | translate }}
+        </p>
+      </div>
+    </div>
+    <div class="projects__project-container">
+      <span #project_background></span>
+      <div #project_content class="projects__wrapper">
+        <h2>{{ "projects.portfolio.title" | translate }}</h2>
+        <p>
+          {{ "projects.portfolio.description" | translate }}
+        </p>
+      </div>
+    </div>
+    <div class="projects__project-container">
+      <span #project_background></span>
+      <div #project_content class="projects__wrapper">
+        <h2>{{ "projects.portalBradesco.title" | translate }}</h2>
+        <p>
+          {{ "projects.portalBradesco.description" | translate }}
+        </p>
+      </div>
+    </div>
+    <div class="projects__project-container">
+      <span #project_background></span>
+      <div #project_content class="projects__wrapper">
+        <h2>{{ "projects.softfin.title" | translate }}</h2>
+        <p>
+          {{ "projects.softfin.description" | translate }}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

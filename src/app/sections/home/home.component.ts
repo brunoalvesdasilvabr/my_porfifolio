@@ -4,49 +4,44 @@ import {
   ViewChild,
   AfterViewInit,
   OnInit,
-  ViewChildren,
-  QueryList,
 } from '@angular/core';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { TranslateService } from '@ngx-translate/core';
+import { Observable } from 'rxjs';
+import { GreetingAnimationService } from 'src/app/shared/services/animations/home/greeting-animation/greeting-animation.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements AfterViewInit, OnInit {
-  @ViewChild('mySvg', { static: false }) mySvg!: ElementRef;
-  @ViewChild('title', { static: false }) title!: ElementRef;
+  @ViewChild('greeting', { static: false }) greeting!: ElementRef;
+  @ViewChild('name', { static: false }) name!: ElementRef;
   @ViewChild('subTitle', { static: false }) subTitle!: ElementRef;
-  words: string[] = [];
-  constructor() {}
+  @ViewChild('contactBtn', { static: false }) contactBtn!: ElementRef;
+  homeTitle$!: Observable<{ greeting: string[]; name: string[] }>;
 
-  ngOnInit(): void {
-    gsap.registerPlugin(ScrollTrigger);
-    this.words = 'Olá! Eu sou o Bruno'.split('');
+  constructor(
+    private translate: TranslateService,
+    private animation: GreetingAnimationService
+  ) {}
 
-    console.log(this.words);
-  }
+  ngOnInit(): void {}
 
   ngAfterViewInit(): void {
-    gsap.from(this.title.nativeElement.querySelectorAll('.letter'), {
-      duration: 0.4, // Animation duration in seconds
-      opacity: 0,
-      y: '-200%',
-      skewY: 100,
-      skewX: 30,
-      scaleY: 0.9,
-      filter: 'blur(10px)',
-      stagger: 0.1,
-      ease: 'bounce', // Bouncy ease for a fun effect (optional)
-    });
+    this.startAnimation();
+  }
 
-    gsap.from(this.subTitle.nativeElement, {
-      duration: 1, // Animation duration in seconds
-      y: '100%',
-      delay: 1.5,
-      opacity: 0,
-      // ease: 'bounce', // Bouncy ease for a fun effect (optional)
+  private startAnimation(): void {
+    setTimeout(() => {
+      this.animation.startAnimation$.next(true);
+      this.animation.setElements(this.greeting, this.name, this.subTitle);
+      this.homeTitle$ = this.animation.homeTitleProps$;
     });
+  }
+  public setDinamicYearsOfExperience(description: string) {
+    const currentDate = new Date().getFullYear();
+    const calcExperience = (currentDate - 2019).toString();
+    const result = description.replace(/\d+/, calcExperience);
+    return result;
   }
 }

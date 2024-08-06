@@ -1,24 +1,108 @@
+section {
+  background-color: #0b132b;
+}
+
 .home {
   display: flex;
   align-items: center;
-  &__description {
-    h1 {
-      display: flex;
-      font-family: "Roboto", sans-serif;
-      color: white;
-      font-size: 4vw;
-      background: linear-gradient(to right, #5bc0be, #5bc0be, #6fffe9);
+  h1,
+  h2 {
+    background: linear-gradient(to right, #5bc0be 20%, #5bc0be 40%, #6fffe9);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 3.5vw;
+    font-weight: 300;
+    letter-spacing: 2px;
+    span {
+      display: inline-block;
+      background: linear-gradient(to right, #5bc0be 20%, #5bc0be 40%, #6fffe9);
+
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      span {
-        background: linear-gradient(to right, #5bc0be, #5bc0be, #6fffe9);
+    }
+  }
 
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
+  p {
+    color: #6fffe9;
+    font-weight: 200;
+    text-align: center;
+    margin-top: 1rem;
+  }
+  &__description {
+    width: 31rem;
+    display: grid;
+    place-items: center;
+  }
+  &__title-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  &__title-greeting {
+    display: flex;
+    color: white;
+    font-size: 3vw;
+  }
+  &__title-name {
+    span {
+      font-weight: 800;
+    }
+  }
+
+  &__mySvg {
+    width: 31vw;
+  }
+  &__subtitle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  &__btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__contact-item {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 3rem;
+    color: #8499b1;
+    margin: 1rem 1rem 0rem 1rem;
+    transition: color 0.5s;
+    &:hover {
+      color: #3460b0;
     }
   }
 }
-section {
-  background-color: #0b132b;
+
+@media only screen and (max-width: 600px) {
+  .home {
+    flex-direction: column;
+    margin-top: 5rem;
+
+    h1 {
+      font-size: 8.5vw;
+      text-align: center;
+    }
+    h2 {
+      font-size: 7vw;
+    }
+    &__mySvg {
+      width: 80vw;
+    }
+
+    &__description {
+      width: 23rem;
+    }
+  }
+
+  // section {
+  //   height: 50vh;
+  // }
 }

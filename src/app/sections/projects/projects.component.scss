@@ -1,0 +1,94 @@
+section {
+  position: relative;
+  background-color: #1c2541;
+  height: auto;
+}
+
+.projects {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  > * {
+    margin-bottom: 2rem;
+  }
+  h1 {
+    font-family: "Briem Hand", cursive;
+    font-size: 7vw;
+    font-weight: 200;
+    background: -webkit-linear-gradient(86deg, #3460b0, #061431);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: translateY(-200%);
+    filter: drop-shadow(0px -3px 7px black);
+  }
+  &__wrapper {
+    padding: 1rem;
+    position: absolute;
+    top: 100%;
+    a {
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      font-family: "Roboto", sans-serif;
+      font-weight: 500;
+      color: #25458b;
+      margin: 1rem 0rem;
+      transition: color 0.5s;
+      &:hover {
+        color: #3460b0;
+      }
+    }
+  }
+  &__project-container {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    width: 60%;
+    height: 10rem;
+    border: solid 1px #3460b0;
+    span {
+      content: "";
+      width: 103%;
+      height: 100%;
+      background: -webkit-linear-gradient(#3460b0, #061431);
+      display: block;
+      // transition: width 0.5s ease-in-out;
+    }
+    h2 {
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      color: white;
+      font-weight: 200;
+      height: 90%;
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+@media only screen and (max-width: 600px) {
+  .projects {
+    &__project-container {
+      width: 98%;
+      margin-bottom: 0rem;
+      height: 11rem;
+      h2 {
+        font-size: 1rem;
+      }
+    }
+    &__wrapper {
+      height: 67%;
+
+      p {
+        overflow-y: scroll;
+      }
+    }
+    h1 {
+      font-size: 15vw;
+    }
+  }
+}

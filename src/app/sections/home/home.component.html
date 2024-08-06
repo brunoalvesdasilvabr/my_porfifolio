@@ -1,15 +1,50 @@
 <section>
   <div class="home">
     <div class="home__description">
-      <h1 #title>
-        <span class="letter" *ngFor="let word of words">
-          {{ word === " " ? "&nbsp;" : word }}
-        </span>
-      </h1>
-
-      <h1 #subTitle>Desenvolvedor Front end</h1>
+      <div class="home__title-container">
+        <h1 class="home__title-greeting" #greeting>
+          <span
+            class="letter"
+            *ngFor="let word of (homeTitle$ | async)?.greeting"
+          >
+            {{ word === " " ? "&nbsp;" : word }}
+          </span>
+        </h1>
+        <h1 class="home__title-name" #name>
+          <span class="letter" *ngFor="let word of (homeTitle$ | async)?.name">
+            {{ word === " " ? "&nbsp;" : word }}
+          </span>
+        </h1>
+      </div>
+      <div #subTitle class="home__subtitle-container">
+        <p>{{ setDinamicYearsOfExperience("home.description" | translate) }}</p>
+        <div class="home__btn-container">
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/brunosilvaundefined/"
+            title="Linkedin"
+            class="home__contact-item"
+          >
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a
+            target="_blank"
+            href="https://github.com/brunoalvesdasilvabr"
+            title="Github"
+            class="home__contact-item"
+          >
+            <i class="fa-brands fa-square-github"></i></a
+          ><a
+            href="mailto:brunoalvesdasilvabr@gmail.com"
+            title="Email"
+            class="home__contact-item"
+          >
+            <i class="fa-regular fa-envelope"></i>
+          </a>
+        </div>
+      </div>
     </div>
 
-    <img #mySvg src="assets/img/me.svg" />
+    <app-my-svg-pic class="home__mySvg"></app-my-svg-pic>
   </div>
 </section>
