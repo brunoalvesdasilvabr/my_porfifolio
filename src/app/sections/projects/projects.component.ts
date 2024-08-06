@@ -6,7 +6,11 @@ import {
   ViewChildren,
   QueryList,
 } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { gsap } from 'gsap';
+import { Subscription, filter, map } from 'rxjs';
+import { ProjectDetailsService } from './projects-details/service/project-details.service';
 
 @Component({
   selector: 'app-projects',
@@ -16,10 +20,26 @@ import { gsap } from 'gsap';
 export class ProjectsComponent implements AfterViewInit {
   @ViewChildren('project_background')
   projectBackgroundElements!: QueryList<ElementRef>;
+  subscription = new Subscription();
   @ViewChild('page_title', { static: false }) page_title!: ElementRef;
+  constructor(
+    private router: Router,
+    private translate: TranslateService,
+    private projectDetailsService: ProjectDetailsService
+  ) {}
   ngAfterViewInit(): void {
     this.pageTitleAnimation();
     this.projectContainerAnimation();
+  }
+
+  scrollPageToBegining() {
+    const subs$ = this.router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe(() => {
+        console.log('opa');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    this.subscription.add(subs$);
   }
 
   pageTitleAnimation() {
@@ -69,5 +89,18 @@ export class ProjectsComponent implements AfterViewInit {
         ease: 'expoScale(0.5,7,none)',
       });
     });
+  }
+
+  navigatoToDetails(projectTitle: string): void {
+    this.translate.get(projectTitle).subscribe((title) => {
+      this.projectDetailsService.setData({
+        title: title,
+        description: '',
+      });
+      this.router.navigate(['project-details']);
+    });
+  }
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 }

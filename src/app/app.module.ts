@@ -9,15 +9,26 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClientModule } from '@angular/common/http';
-import { MySvgPicComponent } from './shared/components/my-svg-pic/my-svg-pic.component';
 import { HeaderComponent } from './core/components/header/header.component';
 import { ProjectsComponent } from './sections/projects/projects.component';
+import { RouterModule } from '@angular/router';
+import { LayoutComponent } from './core/components/layout/layout.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, AboutComponent, HeaderComponent, ProjectsComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    AboutComponent,
+    HeaderComponent,
+    ProjectsComponent,
+    LayoutComponent,
+  ],
   imports: [
     HttpClientModule,
     BrowserModule,
+    AppRoutingModule,
+    RouterModule,
     TranslateModule.forRoot({
       defaultLanguage: 'en', // Set your default language here
       loader: {

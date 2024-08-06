@@ -71,11 +71,12 @@ section {
     background: none;
     border: none;
     cursor: pointer;
-    .fa-brands,
-    .fa-regular {
-      font-size: 3rem;
-      color: #8499b1;
-      margin: 1rem;
+    font-size: 3rem;
+    color: #8499b1;
+    margin: 1rem 1rem 0rem 1rem;
+    transition: color 0.5s;
+    &:hover {
+      color: #3460b0;
     }
   }
 }

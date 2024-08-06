@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { AnimationService } from 'src/app/shared/services/animation.service';
+import { GreetingAnimationService } from 'src/app/shared/services/animations/home/greeting-animation/greeting-animation.service';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +10,7 @@ import { AnimationService } from 'src/app/shared/services/animation.service';
 export class HeaderComponent {
   constructor(
     private translateService: TranslateService,
-    private animation: AnimationService
+    private animation: GreetingAnimationService
   ) {}
 
   public defineTranslation(lang: string) {

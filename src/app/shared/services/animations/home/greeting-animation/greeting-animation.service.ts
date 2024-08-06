@@ -7,7 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
 @Injectable({
   providedIn: 'root',
 })
-export class AnimationService {
+export class GreetingAnimationService {
   private _greetingEl!: ElementRef;
   private _nameEl!: ElementRef;
   private _subTitleEl!: ElementRef;
@@ -15,6 +15,7 @@ export class AnimationService {
     greeting: [''],
     name: [''],
   });
+  private isAnimating = false;
   public startAnimation$ = new BehaviorSubject(false);
 
   constructor(private translate: TranslateService) {
@@ -44,6 +45,7 @@ export class AnimationService {
       this.translate.get('home.greeting'),
       this.translate.get('home.name'),
     ]).subscribe(([greeting, name]) => {
+      console.log([greeting, name]);
       this.homeTitleElements$.next({
         greeting: greeting.split(''),
         name: name.split(''),
@@ -53,8 +55,8 @@ export class AnimationService {
 
   private listenForAnimation(): void {
     this.startAnimation$.subscribe((value) => {
+      console.log({ value });
       if (value) {
-        this.homeTitleElements$.next({ greeting: [''], name: [''] });
         this.getTransations();
         setTimeout(() => {
           this.initHomeAnimation();
@@ -65,32 +67,38 @@ export class AnimationService {
   private initHomeAnimation(): void {
     try {
       const tl = gsap.timeline();
-      tl.from(this._greetingEl.nativeElement.querySelectorAll('.letter'), {
-        duration: 0.1,
-        opacity: 0,
-        y: '-100%',
-        skewX: 30,
-        scaleY: 0.9,
-        filter: 'blur(5px)',
-        stagger: 0.1,
-        ease: 'bounce',
-      });
-      tl.from(this._nameEl.nativeElement.querySelectorAll('.letter'), {
-        duration: 0.1,
-        opacity: 0,
-        y: '-100%',
-        skewX: 30,
-        scaleY: 0.9,
-        filter: 'blur(5px)',
-        stagger: 0.1,
-        ease: 'bounce',
-      });
+      if (!this.isAnimating) {
+        this.isAnimating = true;
+        tl.from(this._greetingEl.nativeElement.querySelectorAll('.letter'), {
+          duration: 0.1,
+          opacity: 0,
+          y: '-100%',
+          skewX: 30,
+          scaleY: 0.9,
+          filter: 'blur(5px)',
+          stagger: 0.1,
+          ease: 'bounce',
+        });
+        tl.from(this._nameEl.nativeElement.querySelectorAll('.letter'), {
+          duration: 0.1,
+          opacity: 0,
+          y: '-100%',
+          skewX: 30,
+          scaleY: 0.9,
+          filter: 'blur(5px)',
+          stagger: 0.1,
+          ease: 'bounce',
+        });
 
-      tl.from(this._subTitleEl.nativeElement, {
-        duration: 1,
-        y: '100%',
-        opacity: 0,
-      });
+        tl.from(this._subTitleEl.nativeElement, {
+          duration: 1,
+          y: '100%',
+          opacity: 0,
+          onComplete: () => {
+            this.isAnimating = false;
+          },
+        });
+      }
     } catch (err) {
       console.error({ err });
     }

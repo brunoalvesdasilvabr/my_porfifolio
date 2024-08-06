@@ -10,7 +10,9 @@
         <p>
           {{ "projects.farol.description" | translate }}
         </p>
-        <button>{{ "utils.buttons.viewMore" | translate }}</button>
+        <a (click)="navigatoToDetails('projects.farol.title')">
+          {{ "utils.buttons.viewMore" | translate }}
+        </a>
       </div>
     </div>
     <div class="projects__project-container">
@@ -20,7 +22,9 @@
         <p>
           {{ "projects.portalCielo.description" | translate }}
         </p>
-        <button>{{ "utils.buttons.viewMore" | translate }}</button>
+        <a (click)="navigatoToDetails('projects.portalCielo.title')">{{
+          "utils.buttons.viewMore" | translate
+        }}</a>
       </div>
     </div>
     <div class="projects__project-container">
