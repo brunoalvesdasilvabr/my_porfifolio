@@ -45,7 +45,6 @@ export class GreetingAnimationService {
       this.translate.get('home.greeting'),
       this.translate.get('home.name'),
     ]).subscribe(([greeting, name]) => {
-      console.log([greeting, name]);
       this.homeTitleElements$.next({
         greeting: greeting.split(''),
         name: name.split(''),
@@ -55,7 +54,6 @@ export class GreetingAnimationService {
 
   private listenForAnimation(): void {
     this.startAnimation$.subscribe((value) => {
-      console.log({ value });
       if (value) {
         this.getTransations();
         setTimeout(() => {
