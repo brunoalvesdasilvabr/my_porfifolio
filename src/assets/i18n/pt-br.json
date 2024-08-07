@@ -8,7 +8,7 @@
   "home": {
     "greeting": "Olá, Eu sou o",
     "name": "Bruno",
-    "description": "Apaixonado por desenvolvimento front-end! Com mais de 5 anos de experiência, me decico cada dia para transformar ideias em código. Aprimorando continuamente minhas habilidades para enfrentar desafios complexos de UI.",
+    "description": "Apaixonado por desenvolvimento front-end! Com mais de 5 anos de experiência, me decico cada dia para transformar ideias em código.",
     "whatsappmessage": "Olá gostei do seu portifolio! Vamos conversar?",
     "letsWorkTogether": "Vamos trabalhar juntos!"
   },
@@ -21,6 +21,7 @@
     },
     "portalCielo": {
       "title": "Stefanini | Portal de produtos Cielo",
+      "keySkills": "PrimeNg, SASS, Angular11, Git, TypesScript, Jenkins, Postman, Figma, SQL, ChartJS",
       "description": "Aplicação desenvolvida em Angular 11 onde participei desde o processo de reuniões de definição da criação até o desenvolvimento de features. Projeto tem como foco listar todos os produtos disponíveis e visualizar informações de vendas utilizando gráficos."
     },
     "portfolio": {

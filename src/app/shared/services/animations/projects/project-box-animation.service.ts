@@ -25,8 +25,8 @@ export class ProjectBoxAnimationService {
         y: 0,
         ease: 'back.out(1.9)',
         scrollTrigger: {
-          start: 'top 40%',
-          end: 'top 30%',
+          start: 'center 55%',
+          end: '90% 20%',
           trigger: this.pageTitle.nativeElement,
           scrub: 2.5,
           markers: false, // Optional for debugging

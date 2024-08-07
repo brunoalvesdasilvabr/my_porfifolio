@@ -10,13 +10,13 @@ import { Observable, Subscription, forkJoin, map, switchMap } from 'rxjs';
 import { ProjectDetailsService } from './service/project-details.service';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { IProjectDetails } from 'src/app/shared/interfaces/project.details.interface';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-projects-details',
   templateUrl: './projects-details.component.html',
   styleUrls: ['./projects-details.component.scss'],
-  imports: [TranslateModule],
+  imports: [TranslateModule, RouterModule],
   standalone: true,
 })
 export class ProjectsDetailsComponent
@@ -80,7 +80,6 @@ export class ProjectsDetailsComponent
   }
   private getDataFromStorageAndTranslate(): void {
     const subs$ = this.getTranslationFromAllProps().subscribe((res) => {
-      console.log({ res });
       this.projectInfo = res;
     });
     this.subscription.add(subs$);

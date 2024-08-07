@@ -1,5 +1,6 @@
 .project-details {
   &__container {
+    transition: all 0.1s;
     padding: 5rem 1rem;
     background-color: #1c2541;
     display: grid;
@@ -11,6 +12,9 @@
       left: 1rem;
       font-size: 2rem;
       cursor: pointer;
+      i {
+        color: #23488d;
+      }
     }
     h1 {
       color: #7c9eb2;
@@ -35,6 +39,10 @@
     &__description {
       max-width: 100%;
       font-size: 1rem;
+    }
+    &__keySkills {
+      text-align: center;
+      font-size: 0.8rem;
     }
   }
 }

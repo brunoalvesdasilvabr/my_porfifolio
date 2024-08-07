@@ -67,6 +67,33 @@ section {
     justify-content: center;
   }
 
+  &__carrosel-skills {
+    width: 15rem;
+    overflow: hidden;
+    border-radius: 2rem;
+  }
+
+  &__carrosel-skills-wrapper {
+    color: white;
+    transition: all 0.5s;
+    font-family: "Briem Hand", cursive;
+    width: 40rem;
+    font-size: 0.9rem;
+    animation: loopCarrosel 11s infinite linear;
+    span {
+      margin-right: 1rem;
+    }
+    @keyframes loopCarrosel {
+      0% {
+        transform: translateX(-90%);
+      }
+      100% {
+        transform: translateX(53%);
+        color: #3460b0;
+      }
+    }
+  }
+
   &__contact-item {
     background: none;
     border: none;

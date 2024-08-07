@@ -38,11 +38,11 @@ export class ProjectsComponent implements AfterViewInit {
     this.scrollToProjectsSection();
   }
   private scrollToProjectsSection() {
+    const topProp =
+      this.projectsContainer.nativeElement.getBoundingClientRect().top - 800;
     if (this.route.snapshot.params) {
       window.scrollTo({
-        top:
-          this.projectsContainer.nativeElement.getBoundingClientRect().top -
-          120,
+        top: topProp,
         behavior: 'smooth',
       });
     }
@@ -52,8 +52,10 @@ export class ProjectsComponent implements AfterViewInit {
     this.projectBoxAnimation.setprojectBackgroundElements =
       this.projectBackgroundElements;
     this.projectBoxAnimation.setPageTitle = this.page_title;
-    this.projectBoxAnimation.pageTitleAnimation();
-    this.projectBoxAnimation.projectContainerAnimation();
+    setTimeout(() => {
+      this.projectBoxAnimation.pageTitleAnimation();
+      this.projectBoxAnimation.projectContainerAnimation();
+    });
   }
 
   public navigatoToDetails(
