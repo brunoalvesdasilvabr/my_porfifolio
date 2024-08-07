@@ -10,15 +10,5 @@ import { Subscription, filter } from 'rxjs';
 })
 export class AppComponent implements OnInit {
   constructor(private router: Router) {}
-  ngOnInit(): void {
-    this.scrollPagesToTop();
-  }
-
-  private scrollPagesToTop(): void {
-    this.router.events
-      .pipe(filter((event) => event instanceof NavigationEnd))
-      .subscribe(() => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-  }
+  ngOnInit(): void {}
 }

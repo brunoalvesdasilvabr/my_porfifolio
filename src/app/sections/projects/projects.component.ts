@@ -5,10 +5,10 @@ import {
   AfterViewInit,
   ViewChildren,
   QueryList,
+  OnInit,
+  ChangeDetectionStrategy,
 } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
-import { gsap } from 'gsap';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription, filter, map } from 'rxjs';
 import { ProjectDetailsService } from './projects-details/service/project-details.service';
 import { ProjectBoxAnimationService } from 'src/app/shared/services/animations/projects/project-box-animation.service';
@@ -17,19 +17,35 @@ import { ProjectBoxAnimationService } from 'src/app/shared/services/animations/p
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProjectsComponent implements AfterViewInit {
   @ViewChildren('project_background')
   projectBackgroundElements!: QueryList<ElementRef>;
+  @ViewChild('projectsContainer', { static: false })
+  projectsContainer!: ElementRef;
   subscription = new Subscription();
-  @ViewChild('page_title', { static: false }) page_title!: ElementRef;
+  @ViewChild('page_title', { static: false })
+  page_title!: ElementRef;
   constructor(
     private router: Router,
+    private route: ActivatedRoute,
     private projectDetailsService: ProjectDetailsService,
     private projectBoxAnimation: ProjectBoxAnimationService
   ) {}
   ngAfterViewInit(): void {
     this.projectBoxAnimationInit();
+    this.scrollToProjectsSection();
+  }
+  private scrollToProjectsSection() {
+    if (this.route.snapshot.params) {
+      window.scrollTo({
+        top:
+          this.projectsContainer.nativeElement.getBoundingClientRect().top -
+          120,
+        behavior: 'smooth',
+      });
+    }
   }
 
   private projectBoxAnimationInit(): void {
@@ -40,19 +56,15 @@ export class ProjectsComponent implements AfterViewInit {
     this.projectBoxAnimation.projectContainerAnimation();
   }
 
-  scrollPageToBegining() {
-    const subs$ = this.router.events
-      .pipe(filter((event) => event instanceof NavigationEnd))
-      .subscribe(() => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    this.subscription.add(subs$);
-  }
-
-  navigatoToDetails(projectTitle: string): void {
+  public navigatoToDetails(
+    title: string,
+    projectDetails: string,
+    keySkills: string
+  ): void {
     this.projectDetailsService.setData({
-      title: projectTitle,
-      description: '',
+      title,
+      projectDetails,
+      keySkills,
     });
     this.router.navigate(['project-details']);
   }

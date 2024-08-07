@@ -1,7 +1,8 @@
 {
   "utils": {
     "buttons": {
-      "viewMore": "CASE STUDY"
+      "viewMore": "CASE STUDY",
+      "back": "Back to Projects"
     }
   },
   "home": {
@@ -16,18 +17,23 @@
     "pageTitle": "Projects",
     "farol": {
       "title": "Stefanini | Farol Cielo",
+      "keySkills": "PrimeNg, SASS, Angular8, Git, JavaScript, Jenkins, Postman, Figma, SQL, ChartJS",
       "description": "Application developed in Angular 11 using chartjs with the main objective of presenting graphs summarizing the establishment's sales, thus enabling the customer to have a better understanding of their sales."
     },
     "portalCielo": {
       "title": "Stefanini | Cielo Products Portal",
+      "keySkills": "PrimeNg, SASS, Angular11, Git, TypesScript, Jenkins, Postman, Figma, SQL, ChartJS",
       "description": "Aplication developed in Angular 11, where I'd been part of from the initial definition meetings all the way through to feature development. The project focuses on listing all available products and displaying sales information on charts"
     },
     "portfolio": {
       "title": "My Portfolio",
+      "keySkills": "SASS, Angular16, Git, TypesScript, AWS S3 Buckets, AWS CloudFront, Greensock(GSAP)",
       "description": "Application developed in Angular 16 using  Greensock(GSAP) for scroll and svg animations."
     },
     "portalSantander": {
       "title": "IBM | Santander Portal",
+      "keySkills": "SASS, Angular13, Git, TypesScript, GitHub Actions",
+
       "description": "Development of the banking portal using Angular 13 based on microapps. The application is divided into several microapplications, everyting is developed using the MVC pattern. An internal library is also used, which contains several ready-made components."
     },
     "portalBradesco": {

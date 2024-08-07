@@ -1,3 +1,15 @@
-<div class="project-details__container">
-  <h1>{{ projectTitle }}</h1>
+<div #projectsContainer class="project-details__container">
+  <h1>{{ projectInfo.title }}</h1>
+  <p class="project-details__description">
+    {{ projectInfo.projectDetails }}
+  </p>
+  <p class="project-details__keySkills">
+    <span>Key Skills: </span>{{ projectInfo.keySkills }}
+  </p>
+  <a (click)="navigateToPreviousPage()">
+    <i
+      class="fa-solid fa-circle-arrow-left"
+      title="{{ 'utils.buttons.back' | translate }}"
+    ></i>
+  </a>
 </div>
