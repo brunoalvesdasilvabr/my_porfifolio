@@ -13,34 +13,42 @@
     "letsWorkTogether": "Vamos trabalhar juntos!"
   },
   "projects": {
-    "pageTitle": "Projetos",
-    "farol": {
-      "title": "Stefanini | Farol Cielo",
-      "keySkills": "PrimeNg, SASS, Angular8, Git, JavaScript, Jenkins, Postman, Figma, SQL, ChartJS",
-      "description": " Aplicação desenvolvida em Angular 11 utilizando chartjs. Principal objetivo da aplicação é apresentar gráficos resumindo vendas do estabelecimento, fazendo assim o cliente possuir um melhor entendimento de suas vendas."
-    },
-    "portalCielo": {
-      "title": "Stefanini | Portal de produtos Cielo",
-      "keySkills": "PrimeNg, SASS, Angular11, Git, TypesScript, Jenkins, Postman, Figma, SQL, ChartJS",
-      "description": "Aplicação desenvolvida em Angular 11 onde participei desde o processo de reuniões de definição da criação até o desenvolvimento de features. Projeto tem como foco listar todos os produtos disponíveis e visualizar informações de vendas utilizando gráficos."
-    },
-    "portfolio": {
-      "title": "Meu Portifólio",
-      "keySkills": "SASS, Angular16, Git, TypesScript, AWS S3 Buckets, AWS CloudFront, Greensock(GSAP)",
-      "description": "Applicação desenvolvido com Angular 16 utilizando Greensock(GSAP) para animações de scroll e svg."
-    },
-    "portalSantander": {
-      "title": "IBM | Portal Santander",
-      "keySkills": "SASS, Angular13, Git, TypesScript, GitHub Actions",
-      "description": "Desenvolvimento do portal bancário com Angular 13 baseado em microapps. Aplição é dividida em várias microaplicações e todas são desenvolvidas no padrão MVC. É também utilizado uma bibliteoca interna onde se possuem vários componentes já prontos."
-    },
-    "portalBradesco": {
-      "title": "Triad Systems | Portal Bradesco",
-      "description": "Projeto é o principal portal do banco nacional Bradesco onde se encontrava desenvolvido com javascript puro e jQuery."
-    },
-    "softfin": {
-      "title": "Softfin",
-      "description": "Projeto web de gestão contábil e financeira baseado em C# no backend e Angularjs para o Frontend. O objetivo principal do projeto era gerenciar o fluxo de caixa e gerenciar o RH do cliente"
-    }
+    "pageTitle": "Projects",
+    "items": [
+      {
+        "title": "Cinch Home Services | Agent UI (Projeto Internacional)",
+        "internationalProject": true,
+        "keySkills": "HTML, CSS, SASS, Angular 17/16/15, Git, Typescript, Github, Postman, Figma, Jenkins",
+        "description": "Cinch é um serviço de garantia residencial que facilita solicitações de reparos residenciais. Focado no desenvolvimento da aplicação para agentes iniciarem um reparo. Time nativo dos EUA. Aplicações em Angular 17,15 e 16."
+      },
+      {
+        "title": "Stefanini | Farol Cielo",
+        "keySkills": "PrimeNg, SASS, Angular8, Git, JavaScript, Jenkins, Postman, Figma, SQL, ChartJS",
+        "description": " Aplicação desenvolvida em Angular 11 utilizando chartjs. Principal objetivo da aplicação é apresentar gráficos resumindo vendas do estabelecimento, fazendo assim o cliente possuir um melhor entendimento de suas vendas."
+      },
+      {
+        "title": "Stefanini | Portal de produtos Cielo",
+        "keySkills": "PrimeNg, SASS, Angular11, Git, TypesScript, Jenkins, Postman, Figma, SQL, ChartJS",
+        "description": "Aplicação desenvolvida em Angular 11 onde participei desde o processo de reuniões de definição da criação até o desenvolvimento de features. Projeto tem como foco listar todos os produtos disponíveis e visualizar informações de vendas utilizando gráficos."
+      },
+      {
+        "title": "Meu Portifólio",
+        "keySkills": "SASS, Angular16, Git, TypesScript, AWS S3 Buckets, AWS CloudFront, Greensock(GSAP)",
+        "description": "Applicação desenvolvido com Angular 16 utilizando Greensock(GSAP) para animações de scroll e svg."
+      },
+      {
+        "title": "IBM | Portal Santander",
+        "keySkills": "SASS, Angular13, Git, TypesScript, GitHub Actions",
+        "description": "Desenvolvimento do portal bancário com Angular 13 baseado em microapps. Aplição é dividida em várias microaplicações e todas são desenvolvidas no padrão MVC. É também utilizado uma bibliteoca interna onde se possuem vários componentes já prontos."
+      },
+      {
+        "title": "Triad Systems | Portal Bradesco",
+        "description": "Projeto é o principal portal do banco nacional Bradesco onde se encontrava desenvolvido com javascript puro e jQuery."
+      },
+      {
+        "title": "Softfin",
+        "description": "Projeto web de gestão contábil e financeira baseado em C# no backend e Angularjs para o Frontend. O objetivo principal do projeto era gerenciar o fluxo de caixa e gerenciar o RH do cliente"
+      }
+    ]
   }
 }

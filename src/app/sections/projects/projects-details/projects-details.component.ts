@@ -37,7 +37,7 @@ export class ProjectsDetailsComponent
   }
   ngAfterViewInit(): void {}
   public navigateToPreviousPage(): void {
-    this.router.navigate(['../']);
+    this.router.navigate(['']);
   }
   // this.translate.onLangChange
   //     .pipe(
