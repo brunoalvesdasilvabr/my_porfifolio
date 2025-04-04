@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './sections/home/home.component';
 import { AboutComponent } from './sections/about/about.component';
@@ -27,6 +27,7 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
     HttpClientModule,
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     RouterModule,
     TranslateModule.forRoot({

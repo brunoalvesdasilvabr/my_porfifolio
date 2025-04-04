@@ -1,19 +1,21 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, forkJoin, switchMap } from 'rxjs';
+import { IProjectDetails } from 'src/app/shared/interfaces/project.details.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProjectDetailsService {
-  private projectData = new BehaviorSubject<{
-    title: string;
-    description: string;
-  }>({ title: '', description: '' });
+  private projectData = new BehaviorSubject<IProjectDetails>({
+    title: '',
+    projectDetails: '',
+    keySkills: '',
+  });
   data$ = this.projectData.asObservable();
   constructor() {
     this.getData();
   }
-  setData(data: { title: string; description: string }) {
+  setData(data: IProjectDetails) {
     localStorage.setItem('projectData', JSON.stringify(data));
     this.projectData.next(data);
   }

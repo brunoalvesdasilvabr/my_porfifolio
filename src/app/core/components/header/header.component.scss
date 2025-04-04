@@ -2,7 +2,7 @@
   background-color: #0b132b;
   padding: 1rem 3rem;
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   justify-content: space-between;
   position: fixed;
   width: 100%;
@@ -24,7 +24,7 @@
       text-decoration: underline;
     }
     img {
-      width: 16%;
+      width: 11%;
     }
   }
   &__btn-container {

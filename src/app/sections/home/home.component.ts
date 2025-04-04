@@ -5,7 +5,6 @@ import {
   AfterViewInit,
   OnInit,
 } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 import { GreetingAnimationService } from 'src/app/shared/services/animations/home/greeting-animation/greeting-animation.service';
 @Component({
@@ -20,10 +19,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
   @ViewChild('contactBtn', { static: false }) contactBtn!: ElementRef;
   homeTitle$!: Observable<{ greeting: string[]; name: string[] }>;
 
-  constructor(
-    private translate: TranslateService,
-    private animation: GreetingAnimationService
-  ) {}
+  constructor(private animation: GreetingAnimationService) {}
 
   ngOnInit(): void {}
 
@@ -32,11 +28,9 @@ export class HomeComponent implements AfterViewInit, OnInit {
   }
 
   private startAnimation(): void {
-    setTimeout(() => {
-      this.animation.startAnimation$.next(true);
-      this.animation.setElements(this.greeting, this.name, this.subTitle);
-      this.homeTitle$ = this.animation.homeTitleProps$;
-    });
+    this.animation.startAnimation$.next(true);
+    this.animation.setElements(this.greeting, this.name, this.subTitle);
+    this.homeTitle$ = this.animation.homeTitleProps$;
   }
   public setDinamicYearsOfExperience(description: string) {
     const currentDate = new Date().getFullYear();

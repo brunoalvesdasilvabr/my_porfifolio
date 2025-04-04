@@ -1,42 +1,56 @@
 {
   "utils": {
     "buttons": {
-      "viewMore": "CASE STUDY"
+      "viewMore": "CASE STUDY",
+      "back": "Back to Projects"
     }
   },
   "home": {
     "greeting": "Hello, I'm",
     "name": "Bruno",
-    "description": "Passionate about front-end development! With 5+ years of experience, Dedicating myself every day to transform ideas into code. Continuously sharpening my skills to tackle complex UI.",
+    "description": "Passionate about front-end development! With 5+ years of experience, Dedicating myself every day to transform ideas into code.",
     "whatsappmessage": "Hello, I enjoyed your portfolio! Let's talk?",
     "letsWorkTogether": "Let's work together!"
   },
 
   "projects": {
     "pageTitle": "Projects",
-    "farol": {
-      "title": "Stefanini | Farol Cielo",
-      "description": "Application developed in Angular 11 using chartjs with the main objective of presenting graphs summarizing the establishment's sales, thus enabling the customer to have a better understanding of their sales."
-    },
-    "portalCielo": {
-      "title": "Stefanini | Cielo Products Portal",
-      "description": "Aplication developed in Angular 11, where I'd been part of from the initial definition meetings all the way through to feature development. The project focuses on listing all available products and displaying sales information on charts"
-    },
-    "portfolio": {
-      "title": "My Portfolio",
-      "description": "Application developed in Angular 16 using  Greensock(GSAP) for scroll and svg animations."
-    },
-    "portalSantander": {
-      "title": "IBM | Santander Portal",
-      "description": "Development of the banking portal using Angular 13 based on microapps. The application is divided into several microapplications, everyting is developed using the MVC pattern. An internal library is also used, which contains several ready-made components."
-    },
-    "portalBradesco": {
-      "title": "Triad Systems | Bradesco Portal",
-      "description": "Responsible for Front end development inside the client. Project is the main website portal of the national bank Bradesco where it was developed with plain javascript and jQuery. "
-    },
-    "softfin": {
-      "title": "Softfin",
-      "description": "Web project for accounting and financial management based in C# on the backend and Angularjs for Frontend. The main goal of the project was to manage the cash flow and HRmanage the HR of the client"
-    }
+    "items": [
+      {
+        "title": "Cinch Home Services | Agent UI (International Project)",
+        "internationalProject": true,
+        "keySkills": "HTML, CSS, SASS, Angular 17/16/15, Git, Typescript, Github, Postman, Figma, Jenkins",
+        "description": "Cinch is a home warranty service facilitating home devices repair requests. Focused on the development of application for Agents to initiate a device repair. Application is an Iframe inside Zoho. Worked with US based team. Development done using Angular 17,15 and 16."
+      },
+      {
+        "title": "Stefanini | Farol Cielo",
+        "keySkills": "PrimeNg, SASS, Angular8, Git, JavaScript, Jenkins, Postman, Figma, SQL, ChartJS",
+        "description": "Application developed in Angular 11 using chartjs with the main objective of presenting graphs summarizing the establishment's sales, thus enabling the customer to have a better understanding of their sales."
+      },
+      {
+        "title": "Stefanini | Cielo Products Portal",
+        "keySkills": "PrimeNg, SASS, Angular11, Git, TypesScript, Jenkins, Postman, Figma, SQL, ChartJS",
+        "description": "Aplication developed in Angular 11, where I'd been part of from the initial definition meetings all the way through to feature development. The project focuses on listing all available products and displaying sales information on charts"
+      },
+      {
+        "title": "My Portfolio",
+        "keySkills": "SASS, Angular16, Git, TypesScript, AWS S3 Buckets, AWS CloudFront, Greensock(GSAP)",
+        "description": "Application developed in Angular 16 using  Greensock(GSAP) for scroll and svg animations."
+      },
+      {
+        "title": "IBM | Santander Portal",
+        "keySkills": "SASS, Angular13, Git, TypesScript, GitHub Actions",
+
+        "description": "Development of the banking portal using Angular 13 based on microapps. The application is divided into several microapplications, everyting is developed using the MVC pattern. An internal library is also used, which contains several ready-made components."
+      },
+      {
+        "title": "Triad Systems | Bradesco Portal",
+        "description": "Responsible for Front end development inside the client. Project is the main website portal of the national bank Bradesco where it was developed with plain javascript and jQuery. "
+      },
+      {
+        "title": "Softfin",
+        "description": "Web project for accounting and financial management based in C# on the backend and Angularjs for Frontend. The main goal of the project was to manage the cash flow and HRmanage the HR of the client"
+      }
+    ]
   }
 }

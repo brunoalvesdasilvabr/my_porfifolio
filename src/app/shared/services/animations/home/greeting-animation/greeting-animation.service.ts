@@ -58,7 +58,7 @@ export class GreetingAnimationService {
         this.getTransations();
         setTimeout(() => {
           this.initHomeAnimation();
-        }, 50);
+        });
       }
     });
   }

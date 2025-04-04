@@ -5,13 +5,25 @@ import {
   AfterViewInit,
   ViewChildren,
   QueryList,
+  OnInit,
+  ChangeDetectionStrategy,
+  OnDestroy,
 } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
-import { gsap } from 'gsap';
-import { Subscription, filter, map } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
+import {
+  Observable,
+  Subject,
+  Subscription,
+  filter,
+  map,
+  switchMap,
+  takeUntil,
+  tap,
+} from 'rxjs';
 import { ProjectDetailsService } from './projects-details/service/project-details.service';
 import { ProjectBoxAnimationService } from 'src/app/shared/services/animations/projects/project-box-animation.service';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { DataService } from 'src/app/shared/services/data/data.service';
 
 @Component({
   selector: 'app-projects',
@@ -21,42 +33,61 @@ import { ProjectBoxAnimationService } from 'src/app/shared/services/animations/p
 export class ProjectsComponent implements AfterViewInit {
   @ViewChildren('project_background')
   projectBackgroundElements!: QueryList<ElementRef>;
-  subscription = new Subscription();
-  @ViewChild('page_title', { static: false }) page_title!: ElementRef;
+  @ViewChild('projectsContainer', { static: false })
+  projectsContainer!: ElementRef;
+  @ViewChild('page_title', { static: false })
+  page_title!: ElementRef;
+  projects$!: Observable<
+    { title: string; keySkills: string; description: string }[]
+  >;
   constructor(
     private router: Router,
+    private route: ActivatedRoute,
     private projectDetailsService: ProjectDetailsService,
-    private projectBoxAnimation: ProjectBoxAnimationService
+    private projectBoxAnimation: ProjectBoxAnimationService,
+    public translate: TranslateService,
+    private dataService: DataService
   ) {}
   ngAfterViewInit(): void {
-    this.projectBoxAnimationInit();
+    this.scrollToProjectsSection();
+    this.projects$ = this.dataService.isTranslating$.pipe(
+      switchMap(() => this.translate.get('projects.items')),
+      tap(() => this.projectBoxAnimationInit())
+    );
+  }
+
+  private scrollToProjectsSection() {
+    const topProp =
+      this.projectsContainer.nativeElement.getBoundingClientRect().top - 800;
+    if (this.route.snapshot.params) {
+      window.scrollTo({
+        top: topProp,
+        behavior: 'smooth',
+      });
+    }
   }
 
   private projectBoxAnimationInit(): void {
     this.projectBoxAnimation.setprojectBackgroundElements =
       this.projectBackgroundElements;
+    console.log('page title', this.page_title);
     this.projectBoxAnimation.setPageTitle = this.page_title;
-    this.projectBoxAnimation.pageTitleAnimation();
-    this.projectBoxAnimation.projectContainerAnimation();
+    setTimeout(() => {
+      this.projectBoxAnimation.pageTitleAnimation();
+      this.projectBoxAnimation.projectContainerAnimation();
+    });
   }
 
-  scrollPageToBegining() {
-    const subs$ = this.router.events
-      .pipe(filter((event) => event instanceof NavigationEnd))
-      .subscribe(() => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    this.subscription.add(subs$);
-  }
-
-  navigatoToDetails(projectTitle: string): void {
+  public navigatoToDetails(
+    title: string,
+    projectDetails: string,
+    keySkills: string
+  ): void {
     this.projectDetailsService.setData({
-      title: projectTitle,
-      description: '',
+      title,
+      projectDetails,
+      keySkills,
     });
     this.router.navigate(['project-details']);
-  }
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
   }
 }

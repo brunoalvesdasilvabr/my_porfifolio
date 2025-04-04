@@ -1,7 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
-import { Subscription, filter } from 'rxjs';
+import {
+  animate,
+  animation,
+  query,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +19,13 @@ export class AppComponent implements OnInit {
   constructor(private router: Router) {}
   ngOnInit(): void {
     this.scrollPagesToTop();
+  }
+  prepareRouteTransition(outlet: RouterOutlet) {
+    return (
+      outlet &&
+      outlet.activatedRouteData &&
+      outlet.activatedRouteData['animation']
+    );
   }
 
   private scrollPagesToTop(): void {
