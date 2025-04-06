@@ -1,12 +1,17 @@
 <div #projectsContainer class="project-details__container">
   <h1>{{ projectInfo.title }}</h1>
+  <h3 class="view-website-btn">
+    <a target="_blank" href="{{ projectInfo.website }}">{{
+      "utils.buttons.viewWebsite" | translate
+    }}</a>
+  </h3>
   <p class="project-details__description">
     {{ projectInfo.projectDetails }}
   </p>
   <p class="project-details__keySkills">
     <span>Key Skills: </span>{{ projectInfo.keySkills }}
   </p>
-  <a (click)="navigateToPreviousPage()">
+  <a class="back-btn" (click)="navigateToPreviousPage()">
     <i
       class="fa-solid fa-circle-arrow-left"
       title="{{ 'utils.buttons.back' | translate }}"

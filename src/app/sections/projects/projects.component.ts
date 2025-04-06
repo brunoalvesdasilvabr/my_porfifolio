@@ -5,24 +5,12 @@ import {
   AfterViewInit,
   ViewChildren,
   QueryList,
-  OnInit,
-  ChangeDetectionStrategy,
-  OnDestroy,
 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import {
-  Observable,
-  Subject,
-  Subscription,
-  filter,
-  map,
-  switchMap,
-  takeUntil,
-  tap,
-} from 'rxjs';
+import { Observable, switchMap, tap } from 'rxjs';
 import { ProjectDetailsService } from './projects-details/service/project-details.service';
 import { ProjectBoxAnimationService } from 'src/app/shared/services/animations/projects/project-box-animation.service';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
 import { DataService } from 'src/app/shared/services/data/data.service';
 
 @Component({
@@ -38,7 +26,7 @@ export class ProjectsComponent implements AfterViewInit {
   @ViewChild('page_title', { static: false })
   page_title!: ElementRef;
   projects$!: Observable<
-    { title: string; keySkills: string; description: string }[]
+    { title: string; website: string; keySkills: string; description: string }[]
   >;
   constructor(
     private router: Router,
@@ -81,12 +69,14 @@ export class ProjectsComponent implements AfterViewInit {
   public navigatoToDetails(
     title: string,
     projectDetails: string,
-    keySkills: string
+    keySkills: string,
+    website: string
   ): void {
     this.projectDetailsService.setData({
       title,
       projectDetails,
       keySkills,
+      website,
     });
     this.router.navigate(['project-details']);
   }

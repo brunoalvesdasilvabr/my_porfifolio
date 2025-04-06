@@ -1,7 +1,9 @@
 {
   "utils": {
     "buttons": {
+      "downloadCV": "Download  Resume",
       "viewMore": "CASE STUDY",
+      "viewWebsite": "VIEW WEBSITE",
       "back": "Back to Projects"
     }
   },
@@ -17,13 +19,14 @@
     "pageTitle": "Projects",
     "items": [
       {
-        "title": "Cinch Home Services | Agent UI (International Project)",
-        "internationalProject": true,
+        "title": "Cinch HS | Agent UI (International Project)",
+        "website": "https://www.linkedin.com/company/cinch-home-services",
         "keySkills": "HTML, CSS, SASS, Angular 17/16/15, Git, Typescript, Github, Postman, Figma, Jenkins",
         "description": "Cinch is a home warranty service facilitating home devices repair requests. Focused on the development of application for Agents to initiate a device repair. Application is an Iframe inside Zoho. Worked with US based team. Development done using Angular 17,15 and 16."
       },
       {
         "title": "Stefanini | Farol Cielo",
+        "website": "https://www.cielo.com.br/venda-mais/cielofarol/",
         "keySkills": "PrimeNg, SASS, Angular8, Git, JavaScript, Jenkins, Postman, Figma, SQL, ChartJS",
         "description": "Application developed in Angular 11 using chartjs with the main objective of presenting graphs summarizing the establishment's sales, thus enabling the customer to have a better understanding of their sales."
       },
@@ -45,10 +48,20 @@
       },
       {
         "title": "Triad Systems | Bradesco Portal",
+        "website": "https://banco.bradesco/html/classic/index.shtm",
+        "keySkills": "CSS, SASS, Angular13, Git, JavaScript, Github, Postman, Figma",
         "description": "Responsible for Front end development inside the client. Project is the main website portal of the national bank Bradesco where it was developed with plain javascript and jQuery. "
       },
       {
+        "title": "Houpa",
+        "website": "https://houpa.com.br/store",
+        "keySkills": "HTML, SASS, JavaScript, Angularjs, PHP, Codeigniter, SQL",
+        "description": "Front end and back end development for eccomerce project using Angularjs and Codegnitor(PHP framework). Project was a eccomerce focused on help store sellers in a fast way to sell."
+      },
+      {
         "title": "Softfin",
+        "website": "http://www.softfin.com.br/",
+        "keySkills": "HTML ,CSS, SASS, JavaScript, Angularjs",
         "description": "Web project for accounting and financial management based in C# on the backend and Angularjs for Frontend. The main goal of the project was to manage the cash flow and HRmanage the HR of the client"
       }
     ]

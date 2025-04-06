@@ -1,21 +1,15 @@
-import {
-  animate,
-  animation,
-  query,
-  style,
-  transition,
-  trigger,
-} from '@angular/animations';
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
-import { filter } from 'rxjs';
+import { filter, Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
+  cleaner$: Subject<void> = new Subject();
+
   constructor(private router: Router) {}
   ngOnInit(): void {
     this.scrollPagesToTop();
@@ -30,9 +24,16 @@ export class AppComponent implements OnInit {
 
   private scrollPagesToTop(): void {
     this.router.events
-      .pipe(filter((event) => event instanceof NavigationEnd))
+      .pipe(
+        filter((event) => event instanceof NavigationEnd),
+        takeUntil(this.cleaner$)
+      )
       .subscribe(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
+  }
+  ngOnDestroy(): void {
+    this.cleaner$.next();
+    this.cleaner$.complete();
   }
 }

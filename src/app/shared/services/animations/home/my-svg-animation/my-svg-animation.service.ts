@@ -9,6 +9,8 @@ gsap.registerPlugin(ScrollTrigger);
 export class MySvgAnimationService {
   private mySvg!: ElementRef;
   private myPic!: ElementRef;
+  private animationTimeline: gsap.core.Timeline | null = null;
+
   constructor() {}
 
   set setMySvg(mySvg: ElementRef) {
@@ -19,11 +21,17 @@ export class MySvgAnimationService {
   }
   public startSvgAnimation(): void {
     const tl = gsap.timeline({ repeat: -1, yoyo: true });
+    const paths = Array.from(
+      this.mySvg.nativeElement.querySelectorAll('path')
+    ).slice(85, 104);
+
+    gsap.set(paths, {
+      willChange: 'transform, stroke-dashoffset, stroke, fill',
+    });
+
     tl.fromTo(
-      Array.from(this.mySvg.nativeElement.querySelectorAll('path')).slice(
-        75,
-        202
-      ),
+      paths,
+
       {
         fill: 'none',
         strokeDasharray: 1000,
@@ -31,7 +39,7 @@ export class MySvgAnimationService {
         ease: 'power.out',
       },
       {
-        duration: 2,
+        duration: 1.5,
         stagger: 0.1,
         stroke: '#6fffe9',
         fill: '#8499B1',
@@ -39,7 +47,10 @@ export class MySvgAnimationService {
         strokeDashoffset: 0,
         ease: 'power.out',
       }
-    );
+    ),
+      { willChange: 'transform, stroke-dashoffset, stroke, fill' };
+
+    this.animationTimeline = tl;
   }
   public startScrollAnimation(): void {
     setTimeout(() => {
@@ -47,6 +58,7 @@ export class MySvgAnimationService {
       tl.fromTo(
         this.myPic.nativeElement,
         { display: 'block' },
+
         {
           opacity: 1,
           filter: 'drop-shadow(0px 0px 15px black)',
@@ -57,6 +69,12 @@ export class MySvgAnimationService {
             toggleActions: 'restart reverse',
             scrub: true,
             markers: false,
+          },
+          onComplete: () => {
+            this.animationTimeline?.pause();
+          },
+          onReverseComplete: () => {
+            this.animationTimeline?.play();
           },
         }
       );

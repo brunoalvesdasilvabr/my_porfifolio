@@ -1,28 +1,32 @@
 {
   "utils": {
     "buttons": {
-      "viewMore": "Ver mais",
+      "downloadCV": "Baixar Cúrriculo",
+      "viewMore": "VER MAIS",
+      "viewWebsite": "VER SITE",
       "back": "Voltar para os Projetos"
     }
   },
   "home": {
     "greeting": "Olá, Eu sou o",
     "name": "Bruno",
-    "description": "Apaixonado por desenvolvimento front-end! Com mais de 5 anos de experiência, me decico cada dia para transformar ideias em código.",
+    "description": "Apaixonado por desenvolvimento front-end! Com mais de 5 anos de experiência, me dedico cada dia para transformar ideias em código.",
     "whatsappmessage": "Olá gostei do seu portifolio! Vamos conversar?",
     "letsWorkTogether": "Vamos trabalhar juntos!"
   },
   "projects": {
-    "pageTitle": "Projects",
+    "pageTitle": "Projetos",
     "items": [
       {
-        "title": "Cinch Home Services | Agent UI (Projeto Internacional)",
+        "title": "Cinch HS | Agent UI (Projeto Internacional)",
+        "website": "https://www.linkedin.com/company/cinch-home-services",
         "internationalProject": true,
         "keySkills": "HTML, CSS, SASS, Angular 17/16/15, Git, Typescript, Github, Postman, Figma, Jenkins",
         "description": "Cinch é um serviço de garantia residencial que facilita solicitações de reparos residenciais. Focado no desenvolvimento da aplicação para agentes iniciarem um reparo. Time nativo dos EUA. Aplicações em Angular 17,15 e 16."
       },
       {
         "title": "Stefanini | Farol Cielo",
+        "website": "https://www.cielo.com.br/venda-mais/cielofarol/",
         "keySkills": "PrimeNg, SASS, Angular8, Git, JavaScript, Jenkins, Postman, Figma, SQL, ChartJS",
         "description": " Aplicação desenvolvida em Angular 11 utilizando chartjs. Principal objetivo da aplicação é apresentar gráficos resumindo vendas do estabelecimento, fazendo assim o cliente possuir um melhor entendimento de suas vendas."
       },
@@ -38,15 +42,26 @@
       },
       {
         "title": "IBM | Portal Santander",
+        "website": "https://banco.bradesco/html/classic/index.shtm",
         "keySkills": "SASS, Angular13, Git, TypesScript, GitHub Actions",
         "description": "Desenvolvimento do portal bancário com Angular 13 baseado em microapps. Aplição é dividida em várias microaplicações e todas são desenvolvidas no padrão MVC. É também utilizado uma bibliteoca interna onde se possuem vários componentes já prontos."
       },
       {
         "title": "Triad Systems | Portal Bradesco",
+        "website": "https://banco.bradesco/html/classic/index.shtm",
+        "keySkills": "CSS, SASS, Angular13, Git, JavaScript, Github, Postman, Figma",
         "description": "Projeto é o principal portal do banco nacional Bradesco onde se encontrava desenvolvido com javascript puro e jQuery."
       },
       {
+        "title": "Houpa",
+        "website": "https://houpa.com.br/store",
+        "keySkills": "HTML, SASS, JavaScript, Angularjs, PHP, Codeigniter, SQL",
+        "description": "Desenvolvimento front-end e back-end para projeto de eccomerce usando Angularjs e Codegnitor (framework PHP). O projeto era um eccomerce focado em ajudar vendedores de lojas a venderem de forma rápida."
+      },
+      {
         "title": "Softfin",
+        "website": "http://www.softfin.com.br/",
+        "keySkills": "HTML ,CSS, SASS, JavaScript, Angularjs",
         "description": "Projeto web de gestão contábil e financeira baseado em C# no backend e Angularjs para o Frontend. O objetivo principal do projeto era gerenciar o fluxo de caixa e gerenciar o RH do cliente"
       }
     ]

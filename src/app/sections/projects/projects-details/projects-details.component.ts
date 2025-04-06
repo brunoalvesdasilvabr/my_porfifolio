@@ -74,6 +74,7 @@ export class ProjectsDetailsComponent
           title: this.translate.get(data.title),
           projectDetails: this.translate.get(data.projectDetails),
           keySkills: this.translate.get(data.keySkills),
+          website: this.translate.get(data.website),
         })
       )
     );

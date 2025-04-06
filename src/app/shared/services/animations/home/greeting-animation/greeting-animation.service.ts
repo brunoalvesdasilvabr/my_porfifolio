@@ -89,7 +89,7 @@ export class GreetingAnimationService {
         });
 
         tl.from(this._subTitleEl.nativeElement, {
-          duration: 1,
+          duration: 0.5,
           y: '100%',
           opacity: 0,
           onComplete: () => {

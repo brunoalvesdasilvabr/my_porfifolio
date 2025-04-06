@@ -7,10 +7,19 @@
     }}"
   >
     {{ "home.letsWorkTogether" | translate }}
-    <img src="../../../../assets/img/whatsapp.svg" alt="whatsapp logo" />
+    <i class="fa-brands fa-whatsapp"></i>
   </a>
   <div class="header__btn-container">
-    <a (click)="defineTranslation('pt-br')">PT-BR</a>
-    <a (click)="defineTranslation('en')">EN</a>
+    <a class="btn-language" (click)="defineTranslation('pt-br')">PT-BR</a> |
+    <a class="btn-language" (click)="defineTranslation('en')">EN</a>
+    <a
+      class="btn-dowload"
+      title="download"
+      download
+      target="_self"
+      href="https://brunoalvesdev.com/assets/CV2025.docx"
+      >{{ "utils.buttons.downloadCV" | translate }}
+      <i class="fa fa-download"></i>
+    </a>
   </div>
 </header>
