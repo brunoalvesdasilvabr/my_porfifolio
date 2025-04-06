@@ -1,6 +1,6 @@
 <div #projectsContainer class="project-details__container">
   <h1>{{ projectInfo.title }}</h1>
-  <h3 class="view-website-btn">
+  <h3 *ngIf="projectInfo.website" class="view-website-btn">
     <a target="_blank" href="{{ projectInfo.website }}">{{
       "utils.buttons.viewWebsite" | translate
     }}</a>

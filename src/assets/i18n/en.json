@@ -43,7 +43,6 @@
       {
         "title": "IBM | Santander Portal",
         "keySkills": "SASS, Angular13, Git, TypesScript, GitHub Actions",
-
         "description": "Development of the banking portal using Angular 13 based on microapps. The application is divided into several microapplications, everyting is developed using the MVC pattern. An internal library is also used, which contains several ready-made components."
       },
       {

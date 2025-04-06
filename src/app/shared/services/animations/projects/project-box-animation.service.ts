@@ -51,11 +51,12 @@ export class ProjectBoxAnimationService {
         element.nativeElement,
         {
           width: '103%',
-          ease: 'power1.in', // Slows in
+          ease: 'power1.in',
         },
         {
           width: 0,
-          ease: 'power1.in', // Slows in
+          stagger: 0.1,
+          ease: 'power1.in',
           transformOrigin: '0% 100%',
         }
       );
