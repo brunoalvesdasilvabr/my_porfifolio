@@ -8,9 +8,10 @@ import {
 import { Observable } from 'rxjs';
 import { GreetingAnimationService } from 'src/app/shared/services/animations/home/greeting-animation/greeting-animation.service';
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+    selector: 'app-home',
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.scss'],
+    standalone: false
 })
 export class HomeComponent implements AfterViewInit, OnInit {
   @ViewChild('greeting', { static: false }) greeting!: ElementRef;

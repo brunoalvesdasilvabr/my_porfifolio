@@ -11,10 +11,11 @@ import { gsap } from 'gsap';
 import { MySvgAnimationService } from '../../services/animations/home/my-svg-animation/my-svg-animation.service';
 
 @Component({
-  selector: 'app-my-svg-pic',
-  templateUrl: './my-svg-pic.component.html',
-  styleUrls: ['./my-svg-pic.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-my-svg-pic',
+    templateUrl: './my-svg-pic.component.html',
+    styleUrls: ['./my-svg-pic.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class MySvgPicComponent implements AfterViewInit {
   @ViewChild('mySvg', { static: false }) mySvg!: ElementRef;

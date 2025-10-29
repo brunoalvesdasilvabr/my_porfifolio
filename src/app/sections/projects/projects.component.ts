@@ -14,9 +14,10 @@ import { TranslateService } from '@ngx-translate/core';
 import { DataService } from 'src/app/shared/services/data/data.service';
 
 @Component({
-  selector: 'app-projects',
-  templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.scss'],
+    selector: 'app-projects',
+    templateUrl: './projects.component.html',
+    styleUrls: ['./projects.component.scss'],
+    standalone: false
 })
 export class ProjectsComponent implements AfterViewInit {
   @ViewChildren('project_background')

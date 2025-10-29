@@ -14,11 +14,10 @@ import { Router, RouterModule } from '@angular/router';
 import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-projects-details',
-  templateUrl: './projects-details.component.html',
-  styleUrls: ['./projects-details.component.scss'],
-  imports: [TranslateModule, RouterModule, NgIf],
-  standalone: true,
+    selector: 'app-projects-details',
+    templateUrl: './projects-details.component.html',
+    styleUrls: ['./projects-details.component.scss'],
+    imports: [TranslateModule, RouterModule, NgIf]
 })
 export class ProjectsDetailsComponent implements OnInit, OnDestroy {
   @ViewChild('projectsContainer', { static: false })
