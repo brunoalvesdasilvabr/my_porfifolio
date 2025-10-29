@@ -7,7 +7,7 @@ section {
   align-items: center;
   h1,
   h2 {
-    background: linear-gradient(to right, #5bc0be 20%, #5bc0be 40%, #6fffe9);
+    background: white;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     font-size: 3.5vw;
@@ -15,7 +15,7 @@ section {
     letter-spacing: 2px;
     span {
       display: inline-block;
-      background: linear-gradient(to right, #5bc0be 20%, #5bc0be 40%, #6fffe9);
+      background: white;
 
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -23,7 +23,7 @@ section {
   }
 
   p {
-    color: #6fffe9;
+    color: white;
     font-weight: 200;
     text-align: center;
     margin-top: 1rem;
@@ -52,7 +52,7 @@ section {
   }
 
   &__mySvg {
-    width: 31vw;
+    width: 30vw;
   }
   &__subtitle-container {
     display: flex;
@@ -111,7 +111,7 @@ section {
 @media only screen and (max-width: 600px) {
   .home {
     flex-direction: column;
-    margin-top: 5rem;
+    margin-top: 8rem;
 
     h1 {
       font-size: 8.5vw;

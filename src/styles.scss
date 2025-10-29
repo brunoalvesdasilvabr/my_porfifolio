@@ -14,7 +14,6 @@ section {
   display: flex;
   justify-content: center;
   height: 108vh;
-  padding: 1rem;
 }
 /* width */
 ::-webkit-scrollbar {
@@ -31,4 +30,25 @@ section {
 ::-webkit-scrollbar-thumb {
   background: -webkit-linear-gradient(#3460b0, #061431);
   border-radius: 10px;
+}
+
+.btn-dowload {
+  margin-top: 5px;
+  color: #7c9eb2;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: all 0.4s;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  i {
+    font-size: 1rem;
+    margin-left: 0.2rem;
+  }
+  &:hover {
+    box-shadow: 5px 3px 11px -5px;
+  }
 }

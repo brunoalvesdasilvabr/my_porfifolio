@@ -13,17 +13,23 @@
         <p>
           {{ project.description }}
         </p>
-        <a
-          (click)="
-            navigatoToDetails(
-              project.title,
-              project.description,
-              project.keySkills
-            )
-          "
-        >
-          {{ "utils.buttons.viewMore" | translate }}
-        </a>
+        <div class="projects__btn-container">
+          <a
+            (click)="
+              navigatoToDetails(
+                project.title,
+                project.description,
+                project.keySkills,
+                project.website
+              )
+            "
+          >
+            {{ "utils.buttons.viewMore" | translate }}
+          </a>
+          <a target="_blank" *ngIf="project.website" [href]="project.website">
+            {{ "utils.buttons.viewWebsite" | translate }}
+          </a>
+        </div>
       </div>
     </div>
   </div>

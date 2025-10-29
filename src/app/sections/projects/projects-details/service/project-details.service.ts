@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, forkJoin, switchMap } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { IProjectDetails } from 'src/app/shared/interfaces/project.details.interface';
 
 @Injectable({
@@ -10,6 +10,7 @@ export class ProjectDetailsService {
     title: '',
     projectDetails: '',
     keySkills: '',
+    website: '',
   });
   data$ = this.projectData.asObservable();
   constructor() {

@@ -6,22 +6,21 @@ import {
   OnInit,
   ViewChild,
 } from '@angular/core';
-import { Observable, Subscription, forkJoin, map, switchMap } from 'rxjs';
+import { Observable, Subscription, forkJoin, map, of, switchMap } from 'rxjs';
 import { ProjectDetailsService } from './service/project-details.service';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { IProjectDetails } from 'src/app/shared/interfaces/project.details.interface';
 import { Router, RouterModule } from '@angular/router';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-projects-details',
   templateUrl: './projects-details.component.html',
   styleUrls: ['./projects-details.component.scss'],
-  imports: [TranslateModule, RouterModule],
+  imports: [TranslateModule, RouterModule, NgIf],
   standalone: true,
 })
-export class ProjectsDetailsComponent
-  implements OnInit, AfterViewInit, OnDestroy
-{
+export class ProjectsDetailsComponent implements OnInit, OnDestroy {
   @ViewChild('projectsContainer', { static: false })
   projectsContainer!: ElementRef;
   projectInfo!: IProjectDetails;
@@ -34,26 +33,12 @@ export class ProjectsDetailsComponent
   ngOnInit(): void {
     this.getDataFromStorageAndTranslate();
     this.handleTolanguageChange();
+    console.log('first', this.projectInfo);
   }
-  ngAfterViewInit(): void {}
   public navigateToPreviousPage(): void {
     this.router.navigate(['']);
   }
-  // this.translate.onLangChange
-  //     .pipe(
-  //       switchMap(() => {
-  //         return this.projectDetailsService.data$;
-  //       })
-  //     )
-  //     .pipe(
-  //       map((data) => {
-  //          combineLatest([
-  //           this.translate.get(data.title),
-  //           this.translate.get(data.projectDetails),
-  //         ]);
-  //       }),
 
-  //     )
   private handleTolanguageChange() {
     const subs$ = this.translate.onLangChange
       .pipe(
@@ -74,6 +59,7 @@ export class ProjectsDetailsComponent
           title: this.translate.get(data.title),
           projectDetails: this.translate.get(data.projectDetails),
           keySkills: this.translate.get(data.keySkills),
+          website: data.website ? this.translate.get(data.website) : of(''),
         })
       )
     );
