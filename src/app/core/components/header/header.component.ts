@@ -4,10 +4,11 @@ import { GreetingAnimationService } from 'src/app/shared/services/animations/hom
 import { DataService } from 'src/app/shared/services/data/data.service';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-header',
+    templateUrl: './header.component.html',
+    styleUrls: ['./header.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class HeaderComponent {
   constructor(
